@@ -10,6 +10,7 @@
 
 @interface CartoDBCredentials : NSObject
 
+@property (nonatomic, retain) NSString* username;
 @property (nonatomic, readonly) bool valid;
 
 @end

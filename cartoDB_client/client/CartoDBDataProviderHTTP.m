@@ -49,25 +49,21 @@ static  NSString* const kSQLBaseURL = @"https://%@.cartodb.com/api/v%@/sql/?q=%@
                                                                kCFStringEncodingUTF8);
 }
 
-- (CartoDBCredentialsApiKey*) keyCredentials
-{
-    return (CartoDBCredentialsApiKey *) self.credentials;;
-}
-
-
 - (NSURL*) newURLForSQL:(NSString*)sql
 {
     NSString* encodedSQL = [self newEncoded:sql];
     
-    NSMutableString *str = [[NSMutableString alloc] initWithFormat:kSQLBaseURL, [self keyCredentials].username, self.apiVersion, encodedSQL];
+    NSMutableString *str = [[NSMutableString alloc] initWithFormat:kSQLBaseURL, self.credentials.username, self.apiVersion, encodedSQL];
     
     if (self.responseFormat == CartoDBResponseFormat_GeoJSON) {
         // see https://github.com/Vizzuality/cartodb/issues/795
         [str appendString:@"&format=geojson"];
     }
     
-    if ([self keyCredentials].apiKey) {
-        [str appendFormat:@"&api_key=%@", [self keyCredentials].apiKey];
+    
+    if ([self.credentials respondsToSelector:@selector(apiKey)]) {
+        NSString *ak = [(CartoDBCredentialsApiKey*)self.credentials apiKey];
+        [str appendFormat:@"&api_key=%@", ak];
     }
     
 #ifdef DEBUG

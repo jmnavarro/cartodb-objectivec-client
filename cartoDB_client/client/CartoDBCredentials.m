@@ -11,12 +11,21 @@
 @implementation CartoDBCredentials
 
 @synthesize valid = _valid;
+@synthesize username = _username;
+
 
 - (bool) valid
 {
-    NSAssert(NO, @"Implement credentials validation");
-    return NO;
+    return (_username.length > 0);
 }
+
+
+- (void) dealloc
+{
+    [_username release];
+    [super dealloc];
+}
+
 
 
 @end

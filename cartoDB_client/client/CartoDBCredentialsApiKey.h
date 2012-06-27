@@ -13,7 +13,6 @@
 @interface CartoDBCredentialsApiKey : CartoDBCredentials
 
 
-@property (nonatomic, retain) NSString* username;
 @property (nonatomic, retain) NSString* apiKey;
 
 @end
