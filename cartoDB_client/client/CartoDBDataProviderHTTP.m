@@ -11,6 +11,7 @@
 #import "CartoDBResponse.h"
 #import "macros.h"
 #import "CartoDBCredentialsApiKey.h"
+#import "SBJsonParser.h"
 
 
 static  NSString* const kDefaultAPIVersion = @"1";
@@ -126,6 +127,29 @@ static  NSString* const kSQLBaseURL = @"https://%@.cartodb.com/api/v%@/sql/?q=%@
 	[_data appendData:data];
 }
 
+- (NSError*) errorWithJSON:(NSString*)json
+{
+#ifdef DEBUG
+        NSLog(@"Parsing error %@...", json);
+#endif
+        
+    SBJsonParser *parser = [[SBJsonParser alloc] init];
+    NSError *error = nil;
+    NSDictionary *dict = [parser objectWithString:json error:&error];
+    [parser release];
+    
+    NSError *ret;
+    if (error != nil || dict.count == 0) {
+        NSLog(@"%@", [error stringWithFormat:@"Error parsing error JSON response \"%@\"", json]);
+        ret = [NSError errorWithDomain:@"cartoDB" code:-1 userInfo:nil];
+    } else {
+        NSArray *msgs = [dict objectForKey:@"error"];
+        ret = [NSError errorWithDomain:@"cartoDB" code:-1 userInfo:[NSDictionary dictionaryWithObject:[msgs objectAtIndex:0] forKey:NSLocalizedDescriptionKey]];
+    }
+        
+    return ret;
+}
+
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
@@ -138,7 +162,7 @@ static  NSString* const kSQLBaseURL = @"https://%@.cartodb.com/api/v%@/sql/?q=%@
         [self.delegate cartoDBProvider:self finishedWithResponse:response];
         [response release]; // <- note you should retain the response in the callback
     } else {
-        [self.delegate cartoDBProvider:self failedWithError:[NSError errorWithDomain:@"cartoDB" code:-1 userInfo:nil]];
+        [self.delegate cartoDBProvider:self failedWithError:[self errorWithJSON:json]];
     }
     
     [json release];

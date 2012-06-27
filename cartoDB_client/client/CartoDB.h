@@ -8,5 +8,6 @@
 
 #import "CartoDBClient.h"
 #import "CartoDBResponse.h"
+#import "CartoDBCredentials.h"
 #import "CartoDBCredentialsApiKey.h"
 #import "CartoDBDataProviderHTTP.h"
