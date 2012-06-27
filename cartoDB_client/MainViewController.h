@@ -10,5 +10,7 @@
 
 @interface MainViewController : UIViewController<CartoDBClientDelegate>
 
+@property (nonatomic, retain) IBOutlet UITextView *text;
+@property (nonatomic, retain) IBOutlet UITextView *result;
 
 @end

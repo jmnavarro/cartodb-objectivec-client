@@ -51,7 +51,7 @@
 
 /* Begin PBXFileReference section */
 		88153D45159B391400E14AED /* CartoDBDataProviderHTTPTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartoDBDataProviderHTTPTests.h; sourceTree = "<group>"; };
-		88153D46159B391400E14AED /* CartoDBDataProviderHTTPTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartoDBDataProviderHTTPTests.m; sourceTree = "<group>"; };
+		88153D46159B391400E14AED /* CartoDBDataProviderHTTPTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartoDBDataProviderHTTPTests.m; sourceTree = "<group>"; wrapsLines = 0; };
 		88A7575D15936978003A767E /* cartoDB_client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cartoDB_client.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A7576115936978003A767E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		88A7576315936978003A767E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };

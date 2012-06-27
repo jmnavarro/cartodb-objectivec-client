@@ -13,6 +13,14 @@
 
 
 @implementation MainViewController
+@synthesize text, result;
+
+- (void) viewDidLoad 
+{
+    [super viewDidLoad];
+    
+    self.text.text = [NSString stringWithFormat:@"SELECT * FROM %@", kTableWithData]; // <- put your query here 
+}
 
 - (IBAction) click
 {
@@ -29,15 +37,13 @@
     [provider release];
     client.delegate = self;
 
-    
-    NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ LIMIT 1", kTableWithData]; // <- put your query here
-    [client startRequestWithSQL:sql];
+    [client startRequestWithSQL:self.text.text];
 }
 
 
 - (void) cartoDBClient:(CartoDBClient*)client receivedResponse:(CartoDBResponse*)response
 {
-    NSString *columns[7] = {kCartoDBColumName_ID, kCartoDBColumName_Name, kCartoDBColumName_Description, kCartoDBColumName_CreatedAt, kCartoDBColumName_UpdatedAt, kCartoDBColumName_Geom, kCartoDBColumName_GeomWebmercator};
+    NSString *columns[] = {kCartoDBColumName_ID, kCartoDBColumName_Name, kCartoDBColumName_Description, kCartoDBColumName_CreatedAt, kCartoDBColumName_UpdatedAt, kCartoDBColumName_GeomLng,kCartoDBColumName_GeomLat};
     
     NSMutableString *str = [[NSMutableString alloc] initWithCapacity:256];
     
@@ -48,8 +54,12 @@
         for (int j = 0; j < ARRAY_LEN(columns); ++j) {
             [str appendFormat:@"\n\t\t %@ = %@", columns[j], [response valueAtRow:i andColumn:columns[j]]];
         }
+
+        CartoDBGeomType type = [[response valueAtRow:i andColumn:kCartoDBColumName_GeomType] intValue];
+        [str appendFormat:@"\n\t\t %@ = %@", kCartoDBColumName_GeomType, NSStringFromGeomType(type)];
     }
-    NSLog(@"%@", str);
+
+    self.result.text = str;
     
     [str release];
     [client release];
@@ -60,6 +70,14 @@
 {
     NSLog(@"Error");
     [client release];    
+}
+
+
+- (void) dealloc
+{
+    [self.text release];
+    [self.result release];
+    [super dealloc];
 }
 
 
