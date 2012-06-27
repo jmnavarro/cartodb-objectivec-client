@@ -137,6 +137,17 @@
 }
 
 
+- (void)testGeometryStringConversionShouldWorkIfIsPoint
+{
+    STAssertTrue([@"Point" isEqualToString:NSStringFromGeomType(CartoDBGeomType_Point)], @"Geometry conversion is invalid");
+}
+
+- (void)testGeometryStringConversionShouldWorkIfIsUndefined
+{
+    STAssertTrue([@"Undefined" isEqualToString:NSStringFromGeomType(CartoDBGeomType_Undefined)], @"Geometry conversion is invalid");
+}
+
+
 - (void)testShouldWorkIfGeoJSONResponseHasNoGeometry{
     NSString* geojson = @"{\"type\": \"FeatureCollection\",\"features\": [{\"type\": \"Feature\",\"properties\": {\"cartodb_id\": 1, \"name\": \"centro\",\"description\": \"el centro del universo\",\"created_at\": \"2012-06-21T16:56:24.827Z\",\"updated_at\": \"2012-06-21T16:56:46.903Z\"},\"geometry\": \"<null>\"}]}";
     

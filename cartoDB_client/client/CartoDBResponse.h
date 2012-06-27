@@ -30,6 +30,7 @@ typedef enum
 } CartoDBGeomType;
 
 CartoDBGeomType GeomTypeFromString(NSString* str);
+NSString* NSStringFromGeomType(CartoDBGeomType type);
 
 
 typedef enum

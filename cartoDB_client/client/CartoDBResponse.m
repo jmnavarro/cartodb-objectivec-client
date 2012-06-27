@@ -33,6 +33,17 @@ CartoDBGeomType GeomTypeFromString(NSString* str)
     return CartoDBGeomType_Undefined;
 }
 
+NSString* NSStringFromGeomType(CartoDBGeomType type)
+{
+    switch (type) {
+        case CartoDBGeomType_Undefined:
+            return @"Undefined";
+        case CartoDBGeomType_Point:
+            return @"Point";
+    }
+    return @"Unknown";
+}
+
 
 
 @implementation CartoDBResponse
