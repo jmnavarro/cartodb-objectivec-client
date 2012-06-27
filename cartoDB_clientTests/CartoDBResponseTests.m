@@ -29,7 +29,7 @@
 {
     NSString* json = @"{\"time\":0.011,\"total_rows\":1,\"rows\":[{\"cartodb_id\":1,\"name\":\"STATIC\",\"description\":\"STATIC\",\"created_at\":\"2012-06-21T16:56:24.827Z\",\"updated_at\":\"2012-06-21T16:56:46.903Z\",\"the_geom\":\"0101000020E610000000000000000000000000000000000000\",\"the_geom_webmercator\":\"0101000020110F0000000000000000000000000040A65408BE\"}]}";
 
-    CartoDBResponse *response = [[CartoDBResponse alloc] initWithJSONResponse:json];
+    CartoDBResponse *response = [[CartoDBResponse alloc] initWithJSON:json andFormat:CartoDBResponseFormat_JSON];
     
     STAssertNotNil(response, @"Response can't be nil");
     STAssertEquals(1, response.count, @"Row count is not valid");
@@ -45,7 +45,7 @@
 {
     NSString* json = @"{\"time\":0.011,\"total_rows\":0,\"rows\":[]}";
     
-    CartoDBResponse *response = [[CartoDBResponse alloc] initWithJSONResponse:json];
+    CartoDBResponse *response = [[CartoDBResponse alloc] initWithJSON:json andFormat:CartoDBResponseFormat_JSON];
     
     STAssertNotNil(response, @"Response can't be nil");
     STAssertEquals(0, response.count, @"Row count is not valid");
@@ -59,7 +59,7 @@
 {
     NSString* json = @"{\"time\":0.011,\"total_rows\":99,\"rows\":[]}";
     
-    CartoDBResponse *response = [[CartoDBResponse alloc] initWithJSONResponse:json];
+    CartoDBResponse *response = [[CartoDBResponse alloc] initWithJSON:json andFormat:CartoDBResponseFormat_JSON];
     
     STAssertNil(response, @"Response must be nil");
 }
@@ -69,7 +69,7 @@
 {
     NSString* json = @"";
     
-    CartoDBResponse *response = [[CartoDBResponse alloc] initWithJSONResponse:json];
+    CartoDBResponse *response = [[CartoDBResponse alloc] initWithJSON:json andFormat:CartoDBResponseFormat_JSON];
     
     STAssertNil(response, @"Response must be nil");
 }
@@ -78,7 +78,7 @@
 {
     NSString* json = nil;
     
-    CartoDBResponse *response = [[CartoDBResponse alloc] initWithJSONResponse:json];
+    CartoDBResponse *response = [[CartoDBResponse alloc] initWithJSON:json andFormat:CartoDBResponseFormat_JSON];
     
     STAssertNil(response, @"Response must be nil");
 }
@@ -87,7 +87,7 @@
 {
     NSString* json = @"{}";
     
-    CartoDBResponse *response = [[CartoDBResponse alloc] initWithJSONResponse:json];
+    CartoDBResponse *response = [[CartoDBResponse alloc] initWithJSON:json andFormat:CartoDBResponseFormat_JSON];
     
     STAssertNil(response, @"Response must be nil");
 }
@@ -97,7 +97,7 @@
 {
     NSString* json = @"sdfget·$%$·/%&/ewrw";
     
-    CartoDBResponse *response = [[CartoDBResponse alloc] initWithJSONResponse:json];
+    CartoDBResponse *response = [[CartoDBResponse alloc] initWithJSON:json andFormat:CartoDBResponseFormat_JSON];
     
     STAssertNil(response, @"Response must be nil");
 }
@@ -107,7 +107,7 @@
 {
     NSString* geojson = @"{\"type\": \"FeatureCollection\",\"features\": [{\"type\": \"Feature\",\"properties\": {\"cartodb_id\": 1, \"name\": \"centro\",\"description\": \"el centro del universo\",\"created_at\": \"2012-06-21T16:56:24.827Z\",\"updated_at\": \"2012-06-21T16:56:46.903Z\"},\"geometry\": {\"type\": \"Point\", \"coordinates\": [10.1,20.2]}}]}";
     
-    CartoDBResponse *response = [[CartoDBResponse alloc] initWithGeoJSONResponse:geojson];
+    CartoDBResponse *response = [[CartoDBResponse alloc] initWithJSON:geojson andFormat:CartoDBResponseFormat_GeoJSON];
     
     STAssertNotNil(response, @"Response can't be nil");
     STAssertEquals(1, response.count, @"Row count is not valid");

@@ -39,30 +39,30 @@ CartoDBGeomType GeomTypeFromString(NSString* str)
 
 @synthesize time = _time;
 @synthesize count = _count;
+@synthesize format = _format;
 
 
-- (id) initWithJSONResponse:(NSString*)json
+- (id) initWithJSON:(NSString*)json andFormat:(CartoDBResponseFormat)f
 {
     if (self = [super init]) {
         NSDictionary* dict = [self parseJSON:json];
-        if (![self fillWithJSON:dict]) {
+        bool ret = NO;
+
+        _format = f;
+
+        if (f == CartoDBResponseFormat_JSON) {
+            ret = [self fillWithJSON:dict];
+        } else if (f == CartoDBResponseFormat_GeoJSON) {
+            ret = [self fillWithGeoJSON:dict];
+        }
+        
+        if (!ret) {
             return nil;
         }
     }
     return self;
 }
 
-
-- (id) initWithGeoJSONResponse:(NSString*)geojson
-{
-    if (self = [super init]) {
-        NSDictionary* dict = [self parseJSON:geojson];
-        if (![self fillWithGeoJSON:dict]) {
-            return nil;
-        }
-    }
-    return self;
-}
 
 
 - (NSDictionary*)parseJSON:(NSString*)json

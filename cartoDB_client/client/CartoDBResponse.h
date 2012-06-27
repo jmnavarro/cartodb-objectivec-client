@@ -32,6 +32,12 @@ typedef enum
 CartoDBGeomType GeomTypeFromString(NSString* str);
 
 
+typedef enum
+{
+    CartoDBResponseFormat_JSON,
+    CartoDBResponseFormat_GeoJSON
+} CartoDBResponseFormat;
+
 
 @interface CartoDBResponse : NSObject
 {
@@ -40,9 +46,9 @@ CartoDBGeomType GeomTypeFromString(NSString* str);
 
 @property (nonatomic, readonly) double time;
 @property (nonatomic, readonly) int count;
+@property (nonatomic, readonly) CartoDBResponseFormat format;
 
-- (id) initWithJSONResponse:(NSString*)json;
-- (id) initWithGeoJSONResponse:(NSString*)geojson;
+- (id) initWithJSON:(NSString*)json andFormat:(CartoDBResponseFormat)f;
 
 - (id) valueAtRow:(int)index andColumn:(NSString*)col;
 
