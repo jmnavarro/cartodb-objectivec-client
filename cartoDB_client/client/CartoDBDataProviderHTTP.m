@@ -13,8 +13,8 @@
 #import "CartoDBCredentialsApiKey.h"
 
 
-static const NSString* kDefaultAPIVersion = @"1";
-static const NSString* kSQLBaseURL = @"https://%@.cartodb.com/api/v%@/sql/?q=%@&api_key=%@";
+static  NSString* const kDefaultAPIVersion = @"1";
+static  NSString* const kSQLBaseURL = @"https://%@.cartodb.com/api/v%@/sql/?q=%@";
 
 
 @implementation CartoDBDataProviderHTTP
@@ -28,6 +28,7 @@ static const NSString* kSQLBaseURL = @"https://%@.cartodb.com/api/v%@/sql/?q=%@&
     if (self = [super init]) {
         _timeout = 30.0;
         _cachePolicy = NSURLRequestUseProtocolCachePolicy;
+        self.apiVersion = kDefaultAPIVersion;
     }
     return self;
 }
@@ -58,7 +59,16 @@ static const NSString* kSQLBaseURL = @"https://%@.cartodb.com/api/v%@/sql/?q=%@&
 {
     NSString* encodedSQL = [self newEncoded:sql];
     
-    NSString *str = [[NSString alloc] initWithFormat:(NSString*)kSQLBaseURL, [self keyCredentials].username, kDefaultAPIVersion, encodedSQL, [self keyCredentials].apiKey];
+    NSMutableString *str = [[NSMutableString alloc] initWithFormat:kSQLBaseURL, [self keyCredentials].username, self.apiVersion, encodedSQL];
+    
+    if (self.responseFormat == CartoDBResponseFormat_GeoJSON) {
+        // see https://github.com/Vizzuality/cartodb/issues/795
+        [str appendString:@"&format=geojson"];
+    }
+    
+    if ([self keyCredentials].apiKey) {
+        [str appendFormat:@"&api_key=%@", [self keyCredentials].apiKey];
+    }
     
 #ifdef DEBUG
     NSLog(@"URL -> %@", str);
@@ -127,7 +137,7 @@ static const NSString* kSQLBaseURL = @"https://%@.cartodb.com/api/v%@/sql/?q=%@&
     
     NSString *json = [[NSString alloc] initWithData:_data encoding:NSUTF8StringEncoding];
     
-    CartoDBResponse *response = [[CartoDBResponse alloc] initWithJSONResponse:json];
+    CartoDBResponse *response = [[CartoDBResponse alloc] initWithJSON:json andFormat:self.responseFormat];
     if (response) {
         [self.delegate cartoDBProvider:self finishedWithResponse:response];
         [response release]; // <- note you should retain the response in the callback

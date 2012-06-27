@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88153D47159B391400E14AED /* CartoDBDataProviderHTTPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 88153D46159B391400E14AED /* CartoDBDataProviderHTTPTests.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		882EE915159B1A830002B2B6 /* CartoDBDataProviderStatic.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A75835159392FB003A767E /* CartoDBDataProviderStatic.m */; };
 		882EE916159B1A830002B2B6 /* CartoDBResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A7578615936978003A767E /* CartoDBResponseTests.m */; };
 		882EE917159B1A830002B2B6 /* CartoDBClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A758321593914F003A767E /* CartoDBClientTests.m */; };
@@ -49,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		88153D45159B391400E14AED /* CartoDBDataProviderHTTPTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartoDBDataProviderHTTPTests.h; sourceTree = "<group>"; };
+		88153D46159B391400E14AED /* CartoDBDataProviderHTTPTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartoDBDataProviderHTTPTests.m; sourceTree = "<group>"; };
 		88A7575D15936978003A767E /* cartoDB_client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cartoDB_client.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A7576115936978003A767E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		88A7576315936978003A767E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -99,7 +102,7 @@
 		88E57E451593D80900583FB9 /* CartoDBDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CartoDBDataProvider.h; path = client/CartoDBDataProvider.h; sourceTree = "<group>"; };
 		88E57E461593D80900583FB9 /* CartoDBDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CartoDBDataProvider.m; path = client/CartoDBDataProvider.m; sourceTree = "<group>"; };
 		88E57E471593D80900583FB9 /* CartoDBDataProviderHTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CartoDBDataProviderHTTP.h; path = client/CartoDBDataProviderHTTP.h; sourceTree = "<group>"; };
-		88E57E481593D80900583FB9 /* CartoDBDataProviderHTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CartoDBDataProviderHTTP.m; path = client/CartoDBDataProviderHTTP.m; sourceTree = "<group>"; };
+		88E57E481593D80900583FB9 /* CartoDBDataProviderHTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CartoDBDataProviderHTTP.m; path = client/CartoDBDataProviderHTTP.m; sourceTree = "<group>"; wrapsLines = 0; };
 		88E57E491593D80900583FB9 /* CartoDBResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CartoDBResponse.h; path = client/CartoDBResponse.h; sourceTree = "<group>"; };
 		88E57E4A1593D80900583FB9 /* CartoDBResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CartoDBResponse.m; path = client/CartoDBResponse.m; sourceTree = "<group>"; };
 		88E57E4B1593D80900583FB9 /* macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = macros.h; path = client/macros.h; sourceTree = "<group>"; };
@@ -197,6 +200,8 @@
 				88A7578615936978003A767E /* CartoDBResponseTests.m */,
 				88A758311593914E003A767E /* CartoDBClientTests.h */,
 				88A758321593914F003A767E /* CartoDBClientTests.m */,
+				88153D45159B391400E14AED /* CartoDBDataProviderHTTPTests.h */,
+				88153D46159B391400E14AED /* CartoDBDataProviderHTTPTests.m */,
 				88A7578015936978003A767E /* Supporting Files */,
 				88E57E231593D2E000583FB9 /* YourData.h */,
 			);
@@ -393,6 +398,7 @@
 				882EE915159B1A830002B2B6 /* CartoDBDataProviderStatic.m in Sources */,
 				882EE916159B1A830002B2B6 /* CartoDBResponseTests.m in Sources */,
 				882EE917159B1A830002B2B6 /* CartoDBClientTests.m in Sources */,
+				88153D47159B391400E14AED /* CartoDBDataProviderHTTPTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

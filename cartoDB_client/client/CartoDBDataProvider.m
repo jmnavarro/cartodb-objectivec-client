@@ -13,6 +13,16 @@
 @synthesize delegate = _delegate;
 @synthesize credentials = _credentials;
 @synthesize valid;
+@synthesize responseFormat = _responseFormat;
+@synthesize apiVersion = _apiVersion;
+
+
+- (id) init {
+    if (self = [super init]) {
+        _responseFormat = CartoDBResponseFormat_GeoJSON;
+    }
+    return self;
+}
 
 
 - (bool) startRequestWithSQL:(NSString*)sql 
@@ -31,6 +41,7 @@
 - (void) dealloc
 {
     [_credentials release];
+    [_apiVersion release];
     [super dealloc];
 }
 

@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "CartoDBResponse.h"
 
 @class CartoDBDataProvider;
-@class CartoDBResponse;
 @class CartoDBCredentials;
+
+
 
 
 @protocol CartoDBDataProviderDelegate <NSObject>
@@ -29,7 +30,9 @@
 @interface CartoDBDataProvider : NSObject
 
 @property (nonatomic, assign) id<CartoDBDataProviderDelegate> delegate;
+@property (nonatomic, retain) NSString* apiVersion;
 @property (nonatomic, retain) CartoDBCredentials *credentials;
+@property (nonatomic, assign) CartoDBResponseFormat responseFormat;
 @property (nonatomic, readonly) bool valid;
 
 - (bool) startRequestWithSQL:(NSString*)sql;
