@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		882EE915159B1A830002B2B6 /* CartoDBDataProviderStatic.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A75835159392FB003A767E /* CartoDBDataProviderStatic.m */; };
+		882EE916159B1A830002B2B6 /* CartoDBResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A7578615936978003A767E /* CartoDBResponseTests.m */; };
+		882EE917159B1A830002B2B6 /* CartoDBClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A758321593914F003A767E /* CartoDBClientTests.m */; };
 		88A7576215936978003A767E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A7576115936978003A767E /* UIKit.framework */; };
 		88A7576415936978003A767E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A7576315936978003A767E /* Foundation.framework */; };
 		88A7576615936978003A767E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A7576515936978003A767E /* CoreGraphics.framework */; };
@@ -60,9 +63,9 @@
 		88A7578115936978003A767E /* cartoDB_clientTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "cartoDB_clientTests-Info.plist"; sourceTree = "<group>"; };
 		88A7578315936978003A767E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		88A7578515936978003A767E /* CartoDBResponseTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CartoDBResponseTests.h; sourceTree = "<group>"; };
-		88A7578615936978003A767E /* CartoDBResponseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CartoDBResponseTests.m; sourceTree = "<group>"; };
+		88A7578615936978003A767E /* CartoDBResponseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CartoDBResponseTests.m; sourceTree = "<group>"; wrapsLines = 0; };
 		88A758311593914E003A767E /* CartoDBClientTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartoDBClientTests.h; sourceTree = "<group>"; };
-		88A758321593914F003A767E /* CartoDBClientTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartoDBClientTests.m; sourceTree = "<group>"; };
+		88A758321593914F003A767E /* CartoDBClientTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartoDBClientTests.m; sourceTree = "<group>"; wrapsLines = 0; };
 		88A75834159392FB003A767E /* CartoDBDataProviderStatic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartoDBDataProviderStatic.h; sourceTree = "<group>"; };
 		88A75835159392FB003A767E /* CartoDBDataProviderStatic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartoDBDataProviderStatic.m; sourceTree = "<group>"; };
 		88B17DCF1599B66000F0DBEC /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
@@ -387,6 +390,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				882EE915159B1A830002B2B6 /* CartoDBDataProviderStatic.m in Sources */,
+				882EE916159B1A830002B2B6 /* CartoDBResponseTests.m in Sources */,
+				882EE917159B1A830002B2B6 /* CartoDBClientTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,9 +11,6 @@
 #import "CartoDBDataProviderStatic.h"
 
 
-@class CartoDBResponse;
-
-
 @interface CartoDBClientTests : SenTestCase<CartoDBClientDelegate>
 {
     CartoDBClient *_fixture;
