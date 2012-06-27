@@ -131,27 +131,34 @@ CartoDBGeomType GeomTypeFromString(NSString* str)
         for (int i = 0; i < _count; ++i) {
             NSDictionary *attrs = [features objectAtIndex:i];
             NSDictionary *properties = [attrs objectForKey:@"properties"];
-            NSDictionary *geom = [attrs objectForKey:@"geometry"];
             
             NSMutableDictionary *columns = [[NSMutableDictionary alloc] initWithCapacity:16];
-            
             [columns addEntriesFromDictionary:properties];
             
-            CartoDBGeomType type = GeomTypeFromString([geom objectForKey:@"type"]);
-            [columns setObject:[NSNumber numberWithInt:type] forKey:kCartoDBColumName_GeomType];
-            
-            switch (type) {
-                case CartoDBGeomType_Point:
-                {
-                    NSArray *coord = [geom objectForKey:@"coordinates"];
-                    [columns setObject:[coord objectAtIndex:0] forKey:kCartoDBColumName_GeomLng];
-                    [columns setObject:[coord objectAtIndex:1] forKey:kCartoDBColumName_GeomLat];
-                    break;
+            id geom = [attrs objectForKey:@"geometry"];
+            if ([geom isKindOfClass:NSDictionary.class]) {
+                // geometry present
+                NSDictionary *geomDict = (NSDictionary*)geom;
+                
+                CartoDBGeomType type = GeomTypeFromString([geomDict objectForKey:@"type"]);
+                [columns setObject:[NSNumber numberWithInt:type] forKey:kCartoDBColumName_GeomType];
+                
+                switch (type) {
+                    case CartoDBGeomType_Point:
+                    {
+                        NSArray *coord = [geomDict objectForKey:@"coordinates"];
+                        [columns setObject:[coord objectAtIndex:0] forKey:kCartoDBColumName_GeomLng];
+                        [columns setObject:[coord objectAtIndex:1] forKey:kCartoDBColumName_GeomLat];
+                        break;
+                    }
+                    default:
+                    {
+                        NSAssert1(NO, @"Geometry type %@ not implemented", [geomDict objectForKey:@"type"]);
+                    }
                 }
-                default:
-                {
-                    NSAssert1(NO, @"Geometry type %@ not implemented", [geom objectForKey:@"type"]);
-                }
+            } else {
+                // geometry: "<null>"
+                [columns setObject:[NSNumber numberWithInt:CartoDBGeomType_Undefined] forKey:kCartoDBColumName_GeomType];
             }
             
             [tmp addObject:columns];

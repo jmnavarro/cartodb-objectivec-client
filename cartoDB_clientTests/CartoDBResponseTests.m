@@ -137,4 +137,24 @@
 }
 
 
+- (void)testShouldWorkIfGeoJSONResponseHasNoGeometry{
+    NSString* geojson = @"{\"type\": \"FeatureCollection\",\"features\": [{\"type\": \"Feature\",\"properties\": {\"cartodb_id\": 1, \"name\": \"centro\",\"description\": \"el centro del universo\",\"created_at\": \"2012-06-21T16:56:24.827Z\",\"updated_at\": \"2012-06-21T16:56:46.903Z\"},\"geometry\": \"<null>\"}]}";
+    
+    CartoDBResponse *response = [[CartoDBResponse alloc] initWithJSON:geojson andFormat:CartoDBResponseFormat_GeoJSON];
+    
+    STAssertNotNil(response, @"Response can't be nil");
+    STAssertEquals(1, response.count, @"Row count is not valid");
+    STAssertEqualsWithAccuracy(-1.0, response.time, 0.001, @"Response time is not valid");
+    STAssertNotNil([response valueAtRow:0 andColumn:nil], @"Item 0 can't be nil");
+    STAssertEquals([NSNumber numberWithInt:1], [response valueAtRow:0 andColumn:kCartoDBColumName_ID], @"ID is not valid");
+    STAssertTrue([@"centro" isEqualToString:[response valueAtRow:0 andColumn:kCartoDBColumName_Name]], @"Name is not valid");
+    STAssertTrue([@"el centro del universo" isEqualToString:[response valueAtRow:0 andColumn:kCartoDBColumName_Description]], @"Description is not valid");
+    STAssertEquals([NSNumber numberWithInt:CartoDBGeomType_Undefined], [response valueAtRow:0 andColumn:kCartoDBColumName_GeomType], @"Type is not valid");
+    
+    STAssertNil([response valueAtRow:1 andColumn:nil], @"Item 1 must be nil");
+    
+    [response release];
+}
+
+
 @end
