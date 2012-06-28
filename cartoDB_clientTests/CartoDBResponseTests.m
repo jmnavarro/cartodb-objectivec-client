@@ -114,8 +114,8 @@
     STAssertEqualsWithAccuracy(-1.0, response.time, 0.001, @"Response time is not valid");
     STAssertNotNil([response valueAtRow:0 andColumn:nil], @"Item 0 can't be nil");
     STAssertEquals([NSNumber numberWithInt:1], [response valueAtRow:0 andColumn:kCartoDBColumName_ID], @"ID is not valid");
-    STAssertTrue([@"centro" isEqualToString:[response valueAtRow:0 andColumn:kCartoDBColumName_Name]], @"Name is not valid");
-    STAssertTrue([@"el centro del universo" isEqualToString:[response valueAtRow:0 andColumn:kCartoDBColumName_Description]], @"Description is not valid");
+    STAssertTrue([@"centro" isEqualToString:[response valueAtRow:0 andColumn:@"name"]], @"Name is not valid");
+    STAssertTrue([@"el centro del universo" isEqualToString:[response valueAtRow:0 andColumn:@"description"]], @"Description is not valid");
     STAssertEquals([NSNumber numberWithInt:CartoDBGeomType_Point], [response valueAtRow:0 andColumn:kCartoDBColumName_GeomType], @"Type is not valid");
     STAssertEqualsWithAccuracy(10.1, [[response valueAtRow:0 andColumn:kCartoDBColumName_GeomLng] doubleValue], 0.001, @"Longitude is not valid");
     STAssertEqualsWithAccuracy(20.2, [[response valueAtRow:0 andColumn:kCartoDBColumName_GeomLat] doubleValue], 0.001, @"Latitude is not valid");
@@ -158,8 +158,8 @@
     STAssertEqualsWithAccuracy(-1.0, response.time, 0.001, @"Response time is not valid");
     STAssertNotNil([response valueAtRow:0 andColumn:nil], @"Item 0 can't be nil");
     STAssertEquals([NSNumber numberWithInt:1], [response valueAtRow:0 andColumn:kCartoDBColumName_ID], @"ID is not valid");
-    STAssertTrue([@"centro" isEqualToString:[response valueAtRow:0 andColumn:kCartoDBColumName_Name]], @"Name is not valid");
-    STAssertTrue([@"el centro del universo" isEqualToString:[response valueAtRow:0 andColumn:kCartoDBColumName_Description]], @"Description is not valid");
+    STAssertTrue([@"centro" isEqualToString:[response valueAtRow:0 andColumn:@"name"]], @"Name is not valid");
+    STAssertTrue([@"el centro del universo" isEqualToString:[response valueAtRow:0 andColumn:@"description"]], @"Description is not valid");
     STAssertEquals([NSNumber numberWithInt:CartoDBGeomType_Undefined], [response valueAtRow:0 andColumn:kCartoDBColumName_GeomType], @"Type is not valid");
     
     STAssertNil([response valueAtRow:1 andColumn:nil], @"Item 1 must be nil");

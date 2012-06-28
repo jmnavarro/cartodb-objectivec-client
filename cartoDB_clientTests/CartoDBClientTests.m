@@ -7,13 +7,14 @@
 //
 
 #import "CartoDBClientTests.h"
+#import "CartoDBClient.h"
 #import "CartoDBResponse.h"
 #import "CartoDBDataProviderHTTP.h"
 #import "NSError+Log.h"
 #import "macros.h"
 #import "CartoDBCredentialsApiKey.h"
+#import "CartoDBDataProviderStatic.h"
 
-#import "YourData.h"
 
 @implementation CartoDBClientTests
 

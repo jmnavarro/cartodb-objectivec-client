@@ -88,9 +88,8 @@
 		88B17DE21599B66000F0DBEC /* SBJsonUTF8Stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonUTF8Stream.h; sourceTree = "<group>"; };
 		88B17DE31599B66000F0DBEC /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
 		88E57E181593C4EE00583FB9 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		88E57E191593C4EE00583FB9 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		88E57E191593C4EE00583FB9 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; wrapsLines = 0; };
 		88E57E1A1593C4EE00583FB9 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
-		88E57E231593D2E000583FB9 /* YourData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YourData.h; sourceTree = "<group>"; };
 		88E57E261593D79100583FB9 /* InfoPlist.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		88E57E3E1593D80900583FB9 /* CartoDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CartoDB.h; path = client/CartoDB.h; sourceTree = "<group>"; };
 		88E57E3F1593D80900583FB9 /* CartoDBClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CartoDBClient.h; path = client/CartoDBClient.h; sourceTree = "<group>"; };
@@ -203,7 +202,6 @@
 				88153D45159B391400E14AED /* CartoDBDataProviderHTTPTests.h */,
 				88153D46159B391400E14AED /* CartoDBDataProviderHTTPTests.m */,
 				88A7578015936978003A767E /* Supporting Files */,
-				88E57E231593D2E000583FB9 /* YourData.h */,
 			);
 			path = cartoDB_clientTests;
 			sourceTree = "<group>";

@@ -7,8 +7,11 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
-#import "CartoDBClient.h"
-#import "CartoDBDataProviderStatic.h"
+
+
+@class CartoDBClient;
+@class CartoDBResponse;
+@class CartoDBDataProviderStatic;
 
 
 @interface CartoDBClientTests : SenTestCase<CartoDBClientDelegate>

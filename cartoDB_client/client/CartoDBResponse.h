@@ -10,8 +10,6 @@
 
 
 FOUNDATION_EXPORT NSString *const kCartoDBColumName_ID;
-FOUNDATION_EXPORT NSString *const kCartoDBColumName_Name;
-FOUNDATION_EXPORT NSString *const kCartoDBColumName_Description;
 FOUNDATION_EXPORT NSString *const kCartoDBColumName_CreatedAt;
 FOUNDATION_EXPORT NSString *const kCartoDBColumName_UpdatedAt;
 FOUNDATION_EXPORT NSString *const kCartoDBColumName_Geom;

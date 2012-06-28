@@ -9,7 +9,13 @@
 #import "MainViewController.h"
 #import "macros.h"
 
-#import "../cartoDB_clientTests/YourData.h"
+
+
+static NSString* const kUser = @"examples";
+static NSString* const kAPIKey = nil;
+static NSString* const kTableWithData = @"nyc_wifi";
+
+
 
 
 @implementation MainViewController
@@ -24,9 +30,8 @@
 
 - (IBAction) click
 {
-    CartoDBCredentialsApiKey *credentials = [[CartoDBCredentialsApiKey alloc] init];
+    CartoDBCredentials *credentials = kAPIKey ? [[CartoDBCredentialsApiKey alloc] initWithApiKey:kAPIKey] : [[CartoDBCredentials alloc] init];
     credentials.username = kUser;
-    credentials.apiKey = kAPIKey;
     
     CartoDBDataProvider *provider = [[CartoDBDataProviderHTTP alloc] init];
     provider.credentials = credentials;
@@ -43,9 +48,9 @@
 
 - (void) cartoDBClient:(CartoDBClient*)client receivedResponse:(CartoDBResponse*)response
 {
-    NSString *columns[] = {kCartoDBColumName_ID, kCartoDBColumName_Name, kCartoDBColumName_Description, kCartoDBColumName_CreatedAt, kCartoDBColumName_UpdatedAt, kCartoDBColumName_GeomLng,kCartoDBColumName_GeomLat};
+    NSString *columns[] = {kCartoDBColumName_ID, @"name", @"address", @"city", @"url", @"phone", @"type", @"zip", kCartoDBColumName_GeomLng,kCartoDBColumName_GeomLat, kCartoDBColumName_CreatedAt, kCartoDBColumName_UpdatedAt};
     
-    NSMutableString *str = [[NSMutableString alloc] initWithCapacity:256];
+    NSMutableString *str = [[NSMutableString alloc] initWithCapacity:response.count * 512];
     
     [str appendFormat:@"CartoDBResponse -> %d rows", response.count];
     for (int i = 0; i < response.count; ++i) {

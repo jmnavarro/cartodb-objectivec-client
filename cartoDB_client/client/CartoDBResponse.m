@@ -12,8 +12,6 @@
 
 
 NSString *const kCartoDBColumName_ID = @"cartodb_id";
-NSString *const kCartoDBColumName_Name = @"name";
-NSString *const kCartoDBColumName_Description = @"description";
 NSString *const kCartoDBColumName_CreatedAt = @"created_at";
 NSString *const kCartoDBColumName_UpdatedAt = @"updated_at";
 NSString *const kCartoDBColumName_Geom = @"the_geom";
