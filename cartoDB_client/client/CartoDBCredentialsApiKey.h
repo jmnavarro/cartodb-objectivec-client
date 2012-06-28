@@ -15,4 +15,6 @@
 
 @property (nonatomic, retain) NSString* apiKey;
 
+- (id) initWithApiKey:(NSString*)apiKey;
+
 @end

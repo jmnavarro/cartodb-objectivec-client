@@ -13,6 +13,14 @@
 @synthesize apiKey = _apiKey;
 
 
+- (id) initWithApiKey:(NSString*)apiKey
+{
+    if (self = [super init]) {
+        self.apiKey = apiKey;
+    }
+    return self;
+}
+
 - (bool) valid
 {
     return [super valid] && _apiKey.length == 40;
