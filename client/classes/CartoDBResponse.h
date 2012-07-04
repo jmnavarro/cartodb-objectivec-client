@@ -15,6 +15,7 @@ FOUNDATION_EXPORT NSString *const kCartoDBColumName_ID;
 FOUNDATION_EXPORT NSString *const kCartoDBColumName_CreatedAt;
 FOUNDATION_EXPORT NSString *const kCartoDBColumName_UpdatedAt;
 FOUNDATION_EXPORT NSString *const kCartoDBColumName_Geom;
+FOUNDATION_EXPORT NSString *const kCartoDBColumName_GeomType;
 FOUNDATION_EXPORT NSString *const kCartoDBColumName_GeomWebmercator;
 
 typedef enum

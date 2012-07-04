@@ -8,6 +8,11 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
+@class CartoDBResponse;
+
 @interface CartoDBResponseTests : SenTestCase
+{
+    CartoDBResponse *_fixture;
+}
 
 @end

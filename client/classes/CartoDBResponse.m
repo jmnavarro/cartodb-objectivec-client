@@ -16,6 +16,7 @@ NSString *const kCartoDBColumName_ID = @"cartodb_id";
 NSString *const kCartoDBColumName_CreatedAt = @"created_at";
 NSString *const kCartoDBColumName_UpdatedAt = @"updated_at";
 NSString *const kCartoDBColumName_Geom = @"the_geom";
+NSString *const kCartoDBColumName_GeomType = @"the_geom_type";
 NSString *const kCartoDBColumName_GeomWebmercator = @"the_geom_webmercator";
 
 
@@ -145,6 +146,7 @@ NSString *const kCartoDBColumName_GeomWebmercator = @"the_geom_webmercator";
         [tmpColumns addEntriesFromDictionary:feature.properties];
         id value = feature.geometry == nil ? [NSNull null] : feature.geometry;
         [tmpColumns setObject:value forKey:kCartoDBColumName_Geom];
+        [tmpColumns setObject:[NSNumber numberWithInt:feature.geometryType] forKey:kCartoDBColumName_GeomType];
         
         NSDictionary *columns = [[NSDictionary alloc] initWithDictionary:tmpColumns];
         [tmpRows addObject:columns];

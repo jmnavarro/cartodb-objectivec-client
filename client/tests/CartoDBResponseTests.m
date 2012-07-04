@@ -107,19 +107,21 @@
     
     NSDictionary *columns = [_fixture valueAtRow:0 andColumn:nil];
     STAssertNotNil(columns, @"Item 0 can't be nil");
-    STAssertEquals(6U, columns.count, @"Column count is not valid");
+    STAssertEquals(7U, columns.count, @"Column count is not valid");
     STAssertNotNil([columns objectForKey:kCartoDBColumName_ID], @"Column cartodb_id must be present");
-    STAssertNotNil([columns objectForKey:@"name"], @"Column cartodb_id must be present");
-    STAssertNotNil([columns objectForKey:@"description"], @"Column cartodb_id must be present");
-    STAssertNotNil([columns objectForKey:kCartoDBColumName_CreatedAt], @"Column cartodb_id must be present");
-    STAssertNotNil([columns objectForKey:kCartoDBColumName_UpdatedAt], @"Column cartodb_id must be present");
-    STAssertNotNil([columns objectForKey:kCartoDBColumName_Geom], @"Column cartodb_id must be present");
+    STAssertNotNil([columns objectForKey:@"name"], @"Column name must be present");
+    STAssertNotNil([columns objectForKey:@"description"], @"Column description must be present");
+    STAssertNotNil([columns objectForKey:kCartoDBColumName_CreatedAt], @"Column created_at must be present");
+    STAssertNotNil([columns objectForKey:kCartoDBColumName_UpdatedAt], @"Column updated_at must be present");
+    STAssertNotNil([columns objectForKey:kCartoDBColumName_Geom], @"Column geometry must be present");
+    STAssertNotNil([columns objectForKey:kCartoDBColumName_GeomType], @"Column geometry type must be present");
 
     STAssertEquals([NSNumber numberWithInt:1], [_fixture valueAtRow:0 andColumn:kCartoDBColumName_ID], @"ID is not valid");
     STAssertTrue([@"centro" isEqualToString:[_fixture valueAtRow:0 andColumn:@"name"]], @"Name is not valid");
     STAssertTrue([@"el centro del universo" isEqualToString:[_fixture valueAtRow:0 andColumn:@"description"]], @"Description is not valid");
     STAssertNotNil([_fixture valueAtRow:0 andColumn:kCartoDBColumName_Geom], @"Geometry should be not nil");
-    STAssertTrue([[_fixture valueAtRow:0 andColumn:kCartoDBColumName_Geom] isKindOfClass:GeoJSONPoint.class], @"Geometry is not valid");
+    STAssertTrue([[_fixture valueAtRow:0 andColumn:kCartoDBColumName_Geom] isKindOfClass:GeoJSONPoint.class], @"Geometry instance is not valid");
+    STAssertEquals([NSNumber numberWithInt:GeoJSONType_GeometryPoint], [_fixture valueAtRow:0 andColumn:kCartoDBColumName_GeomType], @"Geometry type is not valid");
     
     STAssertNil([_fixture valueAtRow:1 andColumn:nil], @"Item 1 must be nil");
 }
