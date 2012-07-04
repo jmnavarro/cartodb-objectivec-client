@@ -48,7 +48,7 @@ static NSString* const kTableWithData = @"nyc_wifi";
 
 - (void) cartoDBClient:(CartoDBClient*)client receivedResponse:(CartoDBResponse*)response
 {
-    NSString *columns[] = {kCartoDBColumName_ID, @"name", @"address", @"city", @"url", @"phone", @"type", @"zip", kCartoDBColumName_GeomLng,kCartoDBColumName_GeomLat, kCartoDBColumName_CreatedAt, kCartoDBColumName_UpdatedAt};
+    NSString *columns[] = {kCartoDBColumName_ID, @"name", @"address", @"city", @"url", @"phone", @"type", @"zip", kCartoDBColumName_CreatedAt, kCartoDBColumName_UpdatedAt};
     
     NSMutableString *str = [[NSMutableString alloc] initWithCapacity:response.count * 512];
     
@@ -60,8 +60,8 @@ static NSString* const kTableWithData = @"nyc_wifi";
             [str appendFormat:@"\n\t\t %@ = %@", columns[j], [response valueAtRow:i andColumn:columns[j]]];
         }
 
-        CartoDBGeomType type = [[response valueAtRow:i andColumn:kCartoDBColumName_GeomType] intValue];
-        [str appendFormat:@"\n\t\t %@ = %@", kCartoDBColumName_GeomType, NSStringFromGeomType(type)];
+        id geometry = [response valueAtRow:i andColumn:kCartoDBColumName_Geom];
+        [str appendFormat:@"\n\t\t Geometry = %@", [geometry description]];
     }
 
     self.result.text = str;

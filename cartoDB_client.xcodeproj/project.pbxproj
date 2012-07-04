@@ -60,7 +60,6 @@
 		887EFD8915A4A365009F7153 /* CartoDBClientTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CartoDBClientTests.h; path = client/tests/CartoDBClientTests.h; sourceTree = SOURCE_ROOT; };
 		887EFD8A15A4A365009F7153 /* CartoDBDataProviderHTTPTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CartoDBDataProviderHTTPTests.h; path = client/tests/CartoDBDataProviderHTTPTests.h; sourceTree = SOURCE_ROOT; };
 		887EFD8B15A4A365009F7153 /* CartoDBDataProviderStatic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CartoDBDataProviderStatic.h; path = client/tests/CartoDBDataProviderStatic.h; sourceTree = SOURCE_ROOT; };
-		887EFD8C15A4A365009F7153 /* CartoDBResponseTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CartoDBResponseTests.h; path = client/tests/CartoDBResponseTests.h; sourceTree = SOURCE_ROOT; };
 		887EFD8D15A4A365009F7153 /* CartoDBClientTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CartoDBClientTests.m; path = client/tests/CartoDBClientTests.m; sourceTree = SOURCE_ROOT; };
 		887EFD8E15A4A365009F7153 /* CartoDBDataProviderHTTPTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CartoDBDataProviderHTTPTests.m; path = client/tests/CartoDBDataProviderHTTPTests.m; sourceTree = SOURCE_ROOT; };
 		887EFD8F15A4A365009F7153 /* CartoDBDataProviderStatic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CartoDBDataProviderStatic.m; path = client/tests/CartoDBDataProviderStatic.m; sourceTree = SOURCE_ROOT; };
@@ -112,6 +111,7 @@
 		887EFDD015A4A55D009F7153 /* GeoJSONPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeoJSONPoint.m; path = "client/geojson-parser/parser/classes/GeoJSONPoint.m"; sourceTree = SOURCE_ROOT; };
 		887EFDD115A4A55D009F7153 /* GeoJSONPolygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeoJSONPolygon.h; path = "client/geojson-parser/parser/classes/GeoJSONPolygon.h"; sourceTree = SOURCE_ROOT; };
 		887EFDD215A4A55D009F7153 /* GeoJSONPolygon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeoJSONPolygon.m; path = "client/geojson-parser/parser/classes/GeoJSONPolygon.m"; sourceTree = SOURCE_ROOT; };
+		887EFDEF15A4E3BC009F7153 /* CartoDBResponseTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CartoDBResponseTests.h; path = client/tests/CartoDBResponseTests.h; sourceTree = SOURCE_ROOT; };
 		88A7575D15936978003A767E /* cartoDB_client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cartoDB_client.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A7576115936978003A767E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		88A7576315936978003A767E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -239,10 +239,10 @@
 				887EFD8915A4A365009F7153 /* CartoDBClientTests.h */,
 				887EFD8A15A4A365009F7153 /* CartoDBDataProviderHTTPTests.h */,
 				887EFD8B15A4A365009F7153 /* CartoDBDataProviderStatic.h */,
-				887EFD8C15A4A365009F7153 /* CartoDBResponseTests.h */,
 				887EFD8D15A4A365009F7153 /* CartoDBClientTests.m */,
 				887EFD8E15A4A365009F7153 /* CartoDBDataProviderHTTPTests.m */,
 				887EFD8F15A4A365009F7153 /* CartoDBDataProviderStatic.m */,
+				887EFDEF15A4E3BC009F7153 /* CartoDBResponseTests.h */,
 				887EFD9015A4A365009F7153 /* CartoDBResponseTests.m */,
 			);
 			path = cartoDB_clientTests;
