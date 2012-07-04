@@ -9,6 +9,7 @@
 #import "CartoDBResponse.h"
 #import "SBJsonParser.h"
 #import "NSError+Log.h"
+#import "GeoJSONFeatureCollection.h"
 
 
 NSString *const kCartoDBColumName_ID = @"cartodb_id";
@@ -16,31 +17,6 @@ NSString *const kCartoDBColumName_CreatedAt = @"created_at";
 NSString *const kCartoDBColumName_UpdatedAt = @"updated_at";
 NSString *const kCartoDBColumName_Geom = @"the_geom";
 NSString *const kCartoDBColumName_GeomWebmercator = @"the_geom_webmercator";
-
-NSString *const kCartoDBColumName_GeomType = @"geom.type";
-NSString *const kCartoDBColumName_GeomLat = @"geom.lat";
-NSString *const kCartoDBColumName_GeomLng = @"geom.lng";
-
-
-
-CartoDBGeomType GeomTypeFromString(NSString* str)
-{
-    if ([@"Point" isEqualToString:str]) {
-        return CartoDBGeomType_Point;
-    }
-    return CartoDBGeomType_Undefined;
-}
-
-NSString* NSStringFromGeomType(CartoDBGeomType type)
-{
-    switch (type) {
-        case CartoDBGeomType_Undefined:
-            return @"Undefined";
-        case CartoDBGeomType_Point:
-            return @"Point";
-    }
-    return @"Unknown";
-}
 
 
 
@@ -133,54 +109,51 @@ NSString* NSStringFromGeomType(CartoDBGeomType type)
     
     _time = -1.0; // unknown
     
-    NSArray *features = [dict objectForKey:@"features"];
-    if (features) {
-        _count = features.count;
-        NSMutableArray *tmp = [[NSMutableArray alloc] initWithCapacity:_count];
-        for (int i = 0; i < _count; ++i) {
-            NSDictionary *attrs = [features objectAtIndex:i];
-            NSDictionary *properties = [attrs objectForKey:@"properties"];
-            
-            NSMutableDictionary *columns = [[NSMutableDictionary alloc] initWithCapacity:16];
-            [columns addEntriesFromDictionary:properties];
-            
-            id geom = [attrs objectForKey:@"geometry"];
-            if ([geom isKindOfClass:NSDictionary.class]) {
-                // geometry present
-                NSDictionary *geomDict = (NSDictionary*)geom;
-                
-                CartoDBGeomType type = GeomTypeFromString([geomDict objectForKey:@"type"]);
-                [columns setObject:[NSNumber numberWithInt:type] forKey:kCartoDBColumName_GeomType];
-                
-                switch (type) {
-                    case CartoDBGeomType_Point:
-                    {
-                        NSArray *coord = [geomDict objectForKey:@"coordinates"];
-                        [columns setObject:[coord objectAtIndex:0] forKey:kCartoDBColumName_GeomLng];
-                        [columns setObject:[coord objectAtIndex:1] forKey:kCartoDBColumName_GeomLat];
-                        break;
-                    }
-                    default:
-                    {
-                        NSAssert1(NO, @"Geometry type %@ not implemented", [geomDict objectForKey:@"type"]);
-                    }
-                }
-            } else {
-                // geometry: "<null>"
-                [columns setObject:[NSNumber numberWithInt:CartoDBGeomType_Undefined] forKey:kCartoDBColumName_GeomType];
-            }
-            
-            [tmp addObject:columns];
-            [columns release];
+    GeoJSONFactory *factory = [[GeoJSONFactory alloc] init];
+
+    ok = [factory createObject:dict];
+    if (ok) {
+        switch (factory.type) {
+            case GeoJSONType_FeatureCollection:
+            {
+                [self parseFeatureCollection:factory.object];
+                _count = _rows.count;
+                ok = YES;
+                break;
+            }   
+            default:
+                NSLog(@"ERROR: Geometry of type %@ not supported", NSStringFromGeoJSONType(factory.type)); 
+                break;
         }
-        
-        _rows = [[NSArray alloc] initWithArray:tmp];
-        [tmp release];
-        
-        ok = YES;
     }
     
+    [factory release];
+
     return ok;
+}
+
+
+- (void) parseFeatureCollection:(GeoJSONFeatureCollection*)featureCollection
+{
+    int length = featureCollection.count;
+    NSMutableArray *tmpRows = [[NSMutableArray alloc] initWithCapacity:length];
+    
+    for (int i = 0; i < length; ++i) {
+        GeoJSONFeature *feature = [featureCollection featureAt:i];
+        
+        NSMutableDictionary *tmpColumns = [[NSMutableDictionary alloc] initWithCapacity:feature.properties.count + 1];
+        [tmpColumns addEntriesFromDictionary:feature.properties];
+        id value = feature.geometry == nil ? [NSNull null] : feature.geometry;
+        [tmpColumns setObject:value forKey:kCartoDBColumName_Geom];
+        
+        NSDictionary *columns = [[NSDictionary alloc] initWithDictionary:tmpColumns];
+        [tmpRows addObject:columns];
+        [columns release];
+        [tmpColumns release];
+    }
+    
+    _rows = [[NSArray alloc] initWithArray:tmpRows];
+    [tmpRows release];
 }
 
 

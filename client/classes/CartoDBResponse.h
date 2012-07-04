@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GeoJSONFactory.h"
+#import "GeoJSONFeature.h"
 
 
 FOUNDATION_EXPORT NSString *const kCartoDBColumName_ID;
@@ -14,22 +16,6 @@ FOUNDATION_EXPORT NSString *const kCartoDBColumName_CreatedAt;
 FOUNDATION_EXPORT NSString *const kCartoDBColumName_UpdatedAt;
 FOUNDATION_EXPORT NSString *const kCartoDBColumName_Geom;
 FOUNDATION_EXPORT NSString *const kCartoDBColumName_GeomWebmercator;
-
-FOUNDATION_EXPORT NSString *const kCartoDBColumName_GeomType;
-FOUNDATION_EXPORT NSString *const kCartoDBColumName_GeomLat;
-FOUNDATION_EXPORT NSString *const kCartoDBColumName_GeomLng;
-
-
-typedef enum
-{
-    CartoDBGeomType_Undefined = 0,
-    CartoDBGeomType_Point
-    
-} CartoDBGeomType;
-
-CartoDBGeomType GeomTypeFromString(NSString* str);
-NSString* NSStringFromGeomType(CartoDBGeomType type);
-
 
 typedef enum
 {

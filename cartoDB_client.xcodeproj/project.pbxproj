@@ -64,7 +64,7 @@
 		887EFD8D15A4A365009F7153 /* CartoDBClientTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CartoDBClientTests.m; path = client/tests/CartoDBClientTests.m; sourceTree = SOURCE_ROOT; };
 		887EFD8E15A4A365009F7153 /* CartoDBDataProviderHTTPTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CartoDBDataProviderHTTPTests.m; path = client/tests/CartoDBDataProviderHTTPTests.m; sourceTree = SOURCE_ROOT; };
 		887EFD8F15A4A365009F7153 /* CartoDBDataProviderStatic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CartoDBDataProviderStatic.m; path = client/tests/CartoDBDataProviderStatic.m; sourceTree = SOURCE_ROOT; };
-		887EFD9015A4A365009F7153 /* CartoDBResponseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CartoDBResponseTests.m; path = client/tests/CartoDBResponseTests.m; sourceTree = SOURCE_ROOT; };
+		887EFD9015A4A365009F7153 /* CartoDBResponseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CartoDBResponseTests.m; path = client/tests/CartoDBResponseTests.m; sourceTree = SOURCE_ROOT; wrapsLines = 0; };
 		887EFD9515A4A37B009F7153 /* CartoDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CartoDB.h; path = client/classes/CartoDB.h; sourceTree = SOURCE_ROOT; };
 		887EFD9615A4A37B009F7153 /* CartoDBClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CartoDBClient.h; path = client/classes/CartoDBClient.h; sourceTree = SOURCE_ROOT; };
 		887EFD9715A4A37B009F7153 /* CartoDBCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CartoDBCredentials.h; path = client/classes/CartoDBCredentials.h; sourceTree = SOURCE_ROOT; };
@@ -156,6 +156,7 @@
 		887EFDC215A4A534009F7153 /* geojson */ = {
 			isa = PBXGroup;
 			children = (
+				88B17DCC1599B66000F0DBEC /* json-framework */,
 				887EFDC315A4A55D009F7153 /* GeoJSONFactory.h */,
 				887EFDC415A4A55D009F7153 /* GeoJSONFactory.m */,
 				887EFDC515A4A55D009F7153 /* GeoJSONFeature.h */,
@@ -172,7 +173,6 @@
 				887EFDD015A4A55D009F7153 /* GeoJSONPoint.m */,
 				887EFDD115A4A55D009F7153 /* GeoJSONPolygon.h */,
 				887EFDD215A4A55D009F7153 /* GeoJSONPolygon.m */,
-				88B17DCC1599B66000F0DBEC /* json-framework */,
 			);
 			name = geojson;
 			sourceTree = "<group>";
