@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		887EFD9115A4A365009F7153 /* CartoDBClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 887EFD8D15A4A365009F7153 /* CartoDBClientTests.m */; };
-		887EFD9215A4A365009F7153 /* CartoDBDataProviderHTTPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 887EFD8E15A4A365009F7153 /* CartoDBDataProviderHTTPTests.m */; };
+		887EFD9215A4A365009F7153 /* CartoDBDataProviderHTTPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 887EFD8E15A4A365009F7153 /* CartoDBDataProviderHTTPTests.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		887EFD9315A4A365009F7153 /* CartoDBDataProviderStatic.m in Sources */ = {isa = PBXBuildFile; fileRef = 887EFD8F15A4A365009F7153 /* CartoDBDataProviderStatic.m */; };
 		887EFD9415A4A365009F7153 /* CartoDBResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 887EFD9015A4A365009F7153 /* CartoDBResponseTests.m */; };
 		887EFDA515A4A37B009F7153 /* CartoDBClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 887EFD9E15A4A37B009F7153 /* CartoDBClient.m */; };
@@ -18,6 +18,21 @@
 		887EFDA915A4A37B009F7153 /* CartoDBDataProviderHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 887EFDA215A4A37B009F7153 /* CartoDBDataProviderHTTP.m */; };
 		887EFDAA15A4A37B009F7153 /* CartoDBResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 887EFDA315A4A37B009F7153 /* CartoDBResponse.m */; };
 		887EFDAB15A4A37B009F7153 /* NSError+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 887EFDA415A4A37B009F7153 /* NSError+Log.m */; };
+		887EFDD315A4A55D009F7153 /* GeoJSONFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 887EFDC415A4A55D009F7153 /* GeoJSONFactory.m */; };
+		887EFDD415A4A55D009F7153 /* GeoJSONFeature.m in Sources */ = {isa = PBXBuildFile; fileRef = 887EFDC615A4A55D009F7153 /* GeoJSONFeature.m */; };
+		887EFDD515A4A55D009F7153 /* GeoJSONFeatureCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 887EFDC815A4A55D009F7153 /* GeoJSONFeatureCollection.m */; };
+		887EFDD615A4A55D009F7153 /* GeoJSONGeometryCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 887EFDCA15A4A55D009F7153 /* GeoJSONGeometryCollection.m */; };
+		887EFDD715A4A55D009F7153 /* GeoJSONMultiPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 887EFDCC15A4A55D009F7153 /* GeoJSONMultiPoint.m */; };
+		887EFDD815A4A55D009F7153 /* GeoJSONMultiPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = 887EFDCE15A4A55D009F7153 /* GeoJSONMultiPolygon.m */; };
+		887EFDD915A4A55D009F7153 /* GeoJSONPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 887EFDD015A4A55D009F7153 /* GeoJSONPoint.m */; };
+		887EFDDA15A4A55D009F7153 /* GeoJSONPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = 887EFDD215A4A55D009F7153 /* GeoJSONPolygon.m */; };
+		887EFDDB15A4A569009F7153 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 887EFDB415A4A52C009F7153 /* SBJsonParser.m */; };
+		887EFDDC15A4A569009F7153 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 887EFDB515A4A52C009F7153 /* SBJsonStreamParser.m */; };
+		887EFDDD15A4A569009F7153 /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 887EFDB615A4A52C009F7153 /* SBJsonStreamParserAccumulator.m */; };
+		887EFDDE15A4A569009F7153 /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 887EFDB715A4A52C009F7153 /* SBJsonStreamParserAdapter.m */; };
+		887EFDDF15A4A569009F7153 /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = 887EFDB815A4A52C009F7153 /* SBJsonStreamParserState.m */; };
+		887EFDE015A4A569009F7153 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 887EFDB915A4A52C009F7153 /* SBJsonTokeniser.m */; };
+		887EFDE115A4A569009F7153 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 887EFDBA15A4A52C009F7153 /* SBJsonUTF8Stream.m */; };
 		88A7576215936978003A767E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A7576115936978003A767E /* UIKit.framework */; };
 		88A7576415936978003A767E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A7576315936978003A767E /* Foundation.framework */; };
 		88A7576615936978003A767E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A7576515936978003A767E /* CoreGraphics.framework */; };
@@ -26,13 +41,6 @@
 		88A7577A15936978003A767E /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A7577915936978003A767E /* SenTestingKit.framework */; };
 		88A7577B15936978003A767E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A7576115936978003A767E /* UIKit.framework */; };
 		88A7577C15936978003A767E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A7576315936978003A767E /* Foundation.framework */; };
-		88B17DE71599B66000F0DBEC /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B17DD11599B66000F0DBEC /* SBJsonParser.m */; };
-		88B17DE81599B66000F0DBEC /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B17DD31599B66000F0DBEC /* SBJsonStreamParser.m */; };
-		88B17DE91599B66000F0DBEC /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B17DD51599B66000F0DBEC /* SBJsonStreamParserAccumulator.m */; };
-		88B17DEA1599B66000F0DBEC /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B17DD71599B66000F0DBEC /* SBJsonStreamParserAdapter.m */; };
-		88B17DEB1599B66000F0DBEC /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B17DD91599B66000F0DBEC /* SBJsonStreamParserState.m */; };
-		88B17DEF1599B66000F0DBEC /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B17DE11599B66000F0DBEC /* SBJsonTokeniser.m */; };
-		88B17DF01599B66000F0DBEC /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B17DE31599B66000F0DBEC /* SBJsonUTF8Stream.m */; };
 		88E57E1B1593C4EE00583FB9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88E57E191593C4EE00583FB9 /* MainViewController.m */; };
 		88E57E1C1593C4EE00583FB9 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88E57E1A1593C4EE00583FB9 /* MainViewController.xib */; };
 		88E57E251593D79100583FB9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 88E57E261593D79100583FB9 /* InfoPlist.strings */; };
@@ -73,6 +81,37 @@
 		887EFDA215A4A37B009F7153 /* CartoDBDataProviderHTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CartoDBDataProviderHTTP.m; path = client/classes/CartoDBDataProviderHTTP.m; sourceTree = SOURCE_ROOT; };
 		887EFDA315A4A37B009F7153 /* CartoDBResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CartoDBResponse.m; path = client/classes/CartoDBResponse.m; sourceTree = SOURCE_ROOT; };
 		887EFDA415A4A37B009F7153 /* NSError+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSError+Log.m"; path = "client/classes/NSError+Log.m"; sourceTree = SOURCE_ROOT; };
+		887EFDAC15A4A52C009F7153 /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJson.h; path = "client/geojson-parser/parser/json-framework/Classes/SBJson.h"; sourceTree = SOURCE_ROOT; };
+		887EFDAD15A4A52C009F7153 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonParser.h; path = "client/geojson-parser/parser/json-framework/Classes/SBJsonParser.h"; sourceTree = SOURCE_ROOT; };
+		887EFDAE15A4A52C009F7153 /* SBJsonStreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamParser.h; path = "client/geojson-parser/parser/json-framework/Classes/SBJsonStreamParser.h"; sourceTree = SOURCE_ROOT; };
+		887EFDAF15A4A52C009F7153 /* SBJsonStreamParserAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamParserAccumulator.h; path = "client/geojson-parser/parser/json-framework/Classes/SBJsonStreamParserAccumulator.h"; sourceTree = SOURCE_ROOT; };
+		887EFDB015A4A52C009F7153 /* SBJsonStreamParserAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamParserAdapter.h; path = "client/geojson-parser/parser/json-framework/Classes/SBJsonStreamParserAdapter.h"; sourceTree = SOURCE_ROOT; };
+		887EFDB115A4A52C009F7153 /* SBJsonStreamParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonStreamParserState.h; path = "client/geojson-parser/parser/json-framework/Classes/SBJsonStreamParserState.h"; sourceTree = SOURCE_ROOT; };
+		887EFDB215A4A52C009F7153 /* SBJsonTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonTokeniser.h; path = "client/geojson-parser/parser/json-framework/Classes/SBJsonTokeniser.h"; sourceTree = SOURCE_ROOT; };
+		887EFDB315A4A52C009F7153 /* SBJsonUTF8Stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonUTF8Stream.h; path = "client/geojson-parser/parser/json-framework/Classes/SBJsonUTF8Stream.h"; sourceTree = SOURCE_ROOT; };
+		887EFDB415A4A52C009F7153 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonParser.m; path = "client/geojson-parser/parser/json-framework/Classes/SBJsonParser.m"; sourceTree = SOURCE_ROOT; };
+		887EFDB515A4A52C009F7153 /* SBJsonStreamParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonStreamParser.m; path = "client/geojson-parser/parser/json-framework/Classes/SBJsonStreamParser.m"; sourceTree = SOURCE_ROOT; };
+		887EFDB615A4A52C009F7153 /* SBJsonStreamParserAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonStreamParserAccumulator.m; path = "client/geojson-parser/parser/json-framework/Classes/SBJsonStreamParserAccumulator.m"; sourceTree = SOURCE_ROOT; };
+		887EFDB715A4A52C009F7153 /* SBJsonStreamParserAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonStreamParserAdapter.m; path = "client/geojson-parser/parser/json-framework/Classes/SBJsonStreamParserAdapter.m"; sourceTree = SOURCE_ROOT; };
+		887EFDB815A4A52C009F7153 /* SBJsonStreamParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonStreamParserState.m; path = "client/geojson-parser/parser/json-framework/Classes/SBJsonStreamParserState.m"; sourceTree = SOURCE_ROOT; };
+		887EFDB915A4A52C009F7153 /* SBJsonTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonTokeniser.m; path = "client/geojson-parser/parser/json-framework/Classes/SBJsonTokeniser.m"; sourceTree = SOURCE_ROOT; };
+		887EFDBA15A4A52C009F7153 /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonUTF8Stream.m; path = "client/geojson-parser/parser/json-framework/Classes/SBJsonUTF8Stream.m"; sourceTree = SOURCE_ROOT; };
+		887EFDC315A4A55D009F7153 /* GeoJSONFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeoJSONFactory.h; path = "client/geojson-parser/parser/classes/GeoJSONFactory.h"; sourceTree = SOURCE_ROOT; };
+		887EFDC415A4A55D009F7153 /* GeoJSONFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeoJSONFactory.m; path = "client/geojson-parser/parser/classes/GeoJSONFactory.m"; sourceTree = SOURCE_ROOT; };
+		887EFDC515A4A55D009F7153 /* GeoJSONFeature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeoJSONFeature.h; path = "client/geojson-parser/parser/classes/GeoJSONFeature.h"; sourceTree = SOURCE_ROOT; };
+		887EFDC615A4A55D009F7153 /* GeoJSONFeature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeoJSONFeature.m; path = "client/geojson-parser/parser/classes/GeoJSONFeature.m"; sourceTree = SOURCE_ROOT; };
+		887EFDC715A4A55D009F7153 /* GeoJSONFeatureCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeoJSONFeatureCollection.h; path = "client/geojson-parser/parser/classes/GeoJSONFeatureCollection.h"; sourceTree = SOURCE_ROOT; };
+		887EFDC815A4A55D009F7153 /* GeoJSONFeatureCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeoJSONFeatureCollection.m; path = "client/geojson-parser/parser/classes/GeoJSONFeatureCollection.m"; sourceTree = SOURCE_ROOT; };
+		887EFDC915A4A55D009F7153 /* GeoJSONGeometryCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeoJSONGeometryCollection.h; path = "client/geojson-parser/parser/classes/GeoJSONGeometryCollection.h"; sourceTree = SOURCE_ROOT; };
+		887EFDCA15A4A55D009F7153 /* GeoJSONGeometryCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeoJSONGeometryCollection.m; path = "client/geojson-parser/parser/classes/GeoJSONGeometryCollection.m"; sourceTree = SOURCE_ROOT; };
+		887EFDCB15A4A55D009F7153 /* GeoJSONMultiPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeoJSONMultiPoint.h; path = "client/geojson-parser/parser/classes/GeoJSONMultiPoint.h"; sourceTree = SOURCE_ROOT; };
+		887EFDCC15A4A55D009F7153 /* GeoJSONMultiPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeoJSONMultiPoint.m; path = "client/geojson-parser/parser/classes/GeoJSONMultiPoint.m"; sourceTree = SOURCE_ROOT; };
+		887EFDCD15A4A55D009F7153 /* GeoJSONMultiPolygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeoJSONMultiPolygon.h; path = "client/geojson-parser/parser/classes/GeoJSONMultiPolygon.h"; sourceTree = SOURCE_ROOT; };
+		887EFDCE15A4A55D009F7153 /* GeoJSONMultiPolygon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeoJSONMultiPolygon.m; path = "client/geojson-parser/parser/classes/GeoJSONMultiPolygon.m"; sourceTree = SOURCE_ROOT; };
+		887EFDCF15A4A55D009F7153 /* GeoJSONPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeoJSONPoint.h; path = "client/geojson-parser/parser/classes/GeoJSONPoint.h"; sourceTree = SOURCE_ROOT; };
+		887EFDD015A4A55D009F7153 /* GeoJSONPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeoJSONPoint.m; path = "client/geojson-parser/parser/classes/GeoJSONPoint.m"; sourceTree = SOURCE_ROOT; };
+		887EFDD115A4A55D009F7153 /* GeoJSONPolygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeoJSONPolygon.h; path = "client/geojson-parser/parser/classes/GeoJSONPolygon.h"; sourceTree = SOURCE_ROOT; };
+		887EFDD215A4A55D009F7153 /* GeoJSONPolygon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeoJSONPolygon.m; path = "client/geojson-parser/parser/classes/GeoJSONPolygon.m"; sourceTree = SOURCE_ROOT; };
 		88A7575D15936978003A767E /* cartoDB_client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cartoDB_client.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A7576115936978003A767E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		88A7576315936978003A767E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -84,22 +123,6 @@
 		88A7577115936978003A767E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		88A7577815936978003A767E /* cartoDB_clientTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cartoDB_clientTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A7577915936978003A767E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		88B17DCF1599B66000F0DBEC /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
-		88B17DD01599B66000F0DBEC /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
-		88B17DD11599B66000F0DBEC /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
-		88B17DD21599B66000F0DBEC /* SBJsonStreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParser.h; sourceTree = "<group>"; };
-		88B17DD31599B66000F0DBEC /* SBJsonStreamParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParser.m; sourceTree = "<group>"; };
-		88B17DD41599B66000F0DBEC /* SBJsonStreamParserAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAccumulator.h; sourceTree = "<group>"; };
-		88B17DD51599B66000F0DBEC /* SBJsonStreamParserAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAccumulator.m; sourceTree = "<group>"; };
-		88B17DD61599B66000F0DBEC /* SBJsonStreamParserAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAdapter.h; sourceTree = "<group>"; };
-		88B17DD71599B66000F0DBEC /* SBJsonStreamParserAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAdapter.m; sourceTree = "<group>"; };
-		88B17DD81599B66000F0DBEC /* SBJsonStreamParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserState.h; sourceTree = "<group>"; };
-		88B17DD91599B66000F0DBEC /* SBJsonStreamParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserState.m; sourceTree = "<group>"; };
-		88B17DDA1599B66000F0DBEC /* SBJsonStreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriter.h; sourceTree = "<group>"; };
-		88B17DE01599B66000F0DBEC /* SBJsonTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonTokeniser.h; sourceTree = "<group>"; };
-		88B17DE11599B66000F0DBEC /* SBJsonTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonTokeniser.m; sourceTree = "<group>"; };
-		88B17DE21599B66000F0DBEC /* SBJsonUTF8Stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonUTF8Stream.h; sourceTree = "<group>"; };
-		88B17DE31599B66000F0DBEC /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
 		88E57E181593C4EE00583FB9 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		88E57E191593C4EE00583FB9 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; wrapsLines = 0; };
 		88E57E1A1593C4EE00583FB9 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
@@ -130,10 +153,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		887EFDC215A4A534009F7153 /* geojson */ = {
+			isa = PBXGroup;
+			children = (
+				887EFDC315A4A55D009F7153 /* GeoJSONFactory.h */,
+				887EFDC415A4A55D009F7153 /* GeoJSONFactory.m */,
+				887EFDC515A4A55D009F7153 /* GeoJSONFeature.h */,
+				887EFDC615A4A55D009F7153 /* GeoJSONFeature.m */,
+				887EFDC715A4A55D009F7153 /* GeoJSONFeatureCollection.h */,
+				887EFDC815A4A55D009F7153 /* GeoJSONFeatureCollection.m */,
+				887EFDC915A4A55D009F7153 /* GeoJSONGeometryCollection.h */,
+				887EFDCA15A4A55D009F7153 /* GeoJSONGeometryCollection.m */,
+				887EFDCB15A4A55D009F7153 /* GeoJSONMultiPoint.h */,
+				887EFDCC15A4A55D009F7153 /* GeoJSONMultiPoint.m */,
+				887EFDCD15A4A55D009F7153 /* GeoJSONMultiPolygon.h */,
+				887EFDCE15A4A55D009F7153 /* GeoJSONMultiPolygon.m */,
+				887EFDCF15A4A55D009F7153 /* GeoJSONPoint.h */,
+				887EFDD015A4A55D009F7153 /* GeoJSONPoint.m */,
+				887EFDD115A4A55D009F7153 /* GeoJSONPolygon.h */,
+				887EFDD215A4A55D009F7153 /* GeoJSONPolygon.m */,
+				88B17DCC1599B66000F0DBEC /* json-framework */,
+			);
+			name = geojson;
+			sourceTree = "<group>";
+		};
 		88A7575215936977003A767E = {
 			isa = PBXGroup;
 			children = (
-				88B17DCC1599B66000F0DBEC /* json-framework */,
 				88A7580615937252003A767E /* client */,
 				88A7576715936978003A767E /* sample_application */,
 				88A7577F15936978003A767E /* cartoDB_clientTests */,
@@ -205,6 +251,7 @@
 		88A7580615937252003A767E /* client */ = {
 			isa = PBXGroup;
 			children = (
+				887EFDC215A4A534009F7153 /* geojson */,
 				887EFD9515A4A37B009F7153 /* CartoDB.h */,
 				887EFD9615A4A37B009F7153 /* CartoDBClient.h */,
 				887EFD9E15A4A37B009F7153 /* CartoDBClient.m */,
@@ -229,25 +276,24 @@
 		88B17DCC1599B66000F0DBEC /* json-framework */ = {
 			isa = PBXGroup;
 			children = (
-				88B17DCF1599B66000F0DBEC /* SBJson.h */,
-				88B17DD01599B66000F0DBEC /* SBJsonParser.h */,
-				88B17DD11599B66000F0DBEC /* SBJsonParser.m */,
-				88B17DD21599B66000F0DBEC /* SBJsonStreamParser.h */,
-				88B17DD31599B66000F0DBEC /* SBJsonStreamParser.m */,
-				88B17DD41599B66000F0DBEC /* SBJsonStreamParserAccumulator.h */,
-				88B17DD51599B66000F0DBEC /* SBJsonStreamParserAccumulator.m */,
-				88B17DD61599B66000F0DBEC /* SBJsonStreamParserAdapter.h */,
-				88B17DD71599B66000F0DBEC /* SBJsonStreamParserAdapter.m */,
-				88B17DD81599B66000F0DBEC /* SBJsonStreamParserState.h */,
-				88B17DD91599B66000F0DBEC /* SBJsonStreamParserState.m */,
-				88B17DDA1599B66000F0DBEC /* SBJsonStreamWriter.h */,
-				88B17DE01599B66000F0DBEC /* SBJsonTokeniser.h */,
-				88B17DE11599B66000F0DBEC /* SBJsonTokeniser.m */,
-				88B17DE21599B66000F0DBEC /* SBJsonUTF8Stream.h */,
-				88B17DE31599B66000F0DBEC /* SBJsonUTF8Stream.m */,
+				887EFDAC15A4A52C009F7153 /* SBJson.h */,
+				887EFDAD15A4A52C009F7153 /* SBJsonParser.h */,
+				887EFDB415A4A52C009F7153 /* SBJsonParser.m */,
+				887EFDAE15A4A52C009F7153 /* SBJsonStreamParser.h */,
+				887EFDB515A4A52C009F7153 /* SBJsonStreamParser.m */,
+				887EFDAF15A4A52C009F7153 /* SBJsonStreamParserAccumulator.h */,
+				887EFDB615A4A52C009F7153 /* SBJsonStreamParserAccumulator.m */,
+				887EFDB015A4A52C009F7153 /* SBJsonStreamParserAdapter.h */,
+				887EFDB715A4A52C009F7153 /* SBJsonStreamParserAdapter.m */,
+				887EFDB115A4A52C009F7153 /* SBJsonStreamParserState.h */,
+				887EFDB815A4A52C009F7153 /* SBJsonStreamParserState.m */,
+				887EFDB215A4A52C009F7153 /* SBJsonTokeniser.h */,
+				887EFDB915A4A52C009F7153 /* SBJsonTokeniser.m */,
+				887EFDB315A4A52C009F7153 /* SBJsonUTF8Stream.h */,
+				887EFDBA15A4A52C009F7153 /* SBJsonUTF8Stream.m */,
 			);
 			name = "json-framework";
-			path = "json-framework/Classes";
+			path = "../json-framework/Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,13 +404,6 @@
 				88A7576E15936978003A767E /* main.m in Sources */,
 				88A7577215936978003A767E /* AppDelegate.m in Sources */,
 				88E57E1B1593C4EE00583FB9 /* MainViewController.m in Sources */,
-				88B17DE71599B66000F0DBEC /* SBJsonParser.m in Sources */,
-				88B17DE81599B66000F0DBEC /* SBJsonStreamParser.m in Sources */,
-				88B17DE91599B66000F0DBEC /* SBJsonStreamParserAccumulator.m in Sources */,
-				88B17DEA1599B66000F0DBEC /* SBJsonStreamParserAdapter.m in Sources */,
-				88B17DEB1599B66000F0DBEC /* SBJsonStreamParserState.m in Sources */,
-				88B17DEF1599B66000F0DBEC /* SBJsonTokeniser.m in Sources */,
-				88B17DF01599B66000F0DBEC /* SBJsonUTF8Stream.m in Sources */,
 				887EFDA515A4A37B009F7153 /* CartoDBClient.m in Sources */,
 				887EFDA615A4A37B009F7153 /* CartoDBCredentials.m in Sources */,
 				887EFDA715A4A37B009F7153 /* CartoDBCredentialsApiKey.m in Sources */,
@@ -372,6 +411,21 @@
 				887EFDA915A4A37B009F7153 /* CartoDBDataProviderHTTP.m in Sources */,
 				887EFDAA15A4A37B009F7153 /* CartoDBResponse.m in Sources */,
 				887EFDAB15A4A37B009F7153 /* NSError+Log.m in Sources */,
+				887EFDD315A4A55D009F7153 /* GeoJSONFactory.m in Sources */,
+				887EFDD415A4A55D009F7153 /* GeoJSONFeature.m in Sources */,
+				887EFDD515A4A55D009F7153 /* GeoJSONFeatureCollection.m in Sources */,
+				887EFDD615A4A55D009F7153 /* GeoJSONGeometryCollection.m in Sources */,
+				887EFDD715A4A55D009F7153 /* GeoJSONMultiPoint.m in Sources */,
+				887EFDD815A4A55D009F7153 /* GeoJSONMultiPolygon.m in Sources */,
+				887EFDD915A4A55D009F7153 /* GeoJSONPoint.m in Sources */,
+				887EFDDA15A4A55D009F7153 /* GeoJSONPolygon.m in Sources */,
+				887EFDDB15A4A569009F7153 /* SBJsonParser.m in Sources */,
+				887EFDDC15A4A569009F7153 /* SBJsonStreamParser.m in Sources */,
+				887EFDDD15A4A569009F7153 /* SBJsonStreamParserAccumulator.m in Sources */,
+				887EFDDE15A4A569009F7153 /* SBJsonStreamParserAdapter.m in Sources */,
+				887EFDDF15A4A569009F7153 /* SBJsonStreamParserState.m in Sources */,
+				887EFDE015A4A569009F7153 /* SBJsonTokeniser.m in Sources */,
+				887EFDE115A4A569009F7153 /* SBJsonUTF8Stream.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
