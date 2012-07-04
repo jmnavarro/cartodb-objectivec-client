@@ -122,4 +122,28 @@
 }
 
 
+- (void)testURLShouldContainPageIfPresent
+{
+    _fixture.page = 2;
+    _fixture.pageSize = 10;
+    
+    NSURL *url = [_fixture newURLForSQL:@"sql"];
+    
+    STAssertTrue(NSNotFound != [url.absoluteString rangeOfString:@"page=2"].location, @"Page doesn't found");
+    STAssertTrue(NSNotFound != [url.absoluteString rangeOfString:@"rows_per_page=10"].location, @"Page size doesn't found");
+    
+    [url release];
+}
+
+- (void)testURLShouldNotContainPage
+{
+    NSURL *url = [_fixture newURLForSQL:@"sql"];
+    
+    STAssertTrue(NSNotFound == [url.absoluteString rangeOfString:@"page="].location, @"Page does found");
+    STAssertTrue(NSNotFound == [url.absoluteString rangeOfString:@"rows_per_page="].location, @"Page size does found");
+    
+    [url release];
+}
+
+
 @end

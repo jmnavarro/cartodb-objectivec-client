@@ -15,11 +15,15 @@
 @synthesize valid;
 @synthesize responseFormat = _responseFormat;
 @synthesize apiVersion = _apiVersion;
+@synthesize page = _page;
+@synthesize pageSize = _pageSize;
 
 
 - (id) init {
     if (self = [super init]) {
         _responseFormat = CartoDBResponseFormat_GeoJSON;
+        _page = -1;
+        _pageSize = 25;
     }
     return self;
 }
@@ -33,8 +37,7 @@
 
 - (bool) valid
 {
-    NSAssert(NO, @"Implement data provider validation");
-    return NO;
+    return (_page == -1 || (_page >= 0 && _pageSize > 0));
 }
 
 

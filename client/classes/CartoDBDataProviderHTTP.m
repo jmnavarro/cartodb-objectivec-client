@@ -36,7 +36,7 @@ static  NSString* const kSQLBaseURL = @"https://%@.cartodb.com/api/v%@/sql/?q=%@
 
 - (bool) valid
 {
-    return (self.delegate && self.credentials.valid);
+    return [super valid] && self.delegate && self.credentials.valid;
 }
 
 
@@ -61,6 +61,9 @@ static  NSString* const kSQLBaseURL = @"https://%@.cartodb.com/api/v%@/sql/?q=%@
         [str appendString:@"&format=geojson"];
     }
     
+    if (self.page >= 0) {
+        [str appendFormat:@"&page=%d&rows_per_page=%d", self.page, self.pageSize, nil];
+    }
     
     if ([self.credentials respondsToSelector:@selector(apiKey)]) {
         NSString *ak = [(CartoDBCredentialsApiKey*)self.credentials apiKey];

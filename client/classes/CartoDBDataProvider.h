@@ -33,6 +33,8 @@
 @property (nonatomic, retain) NSString* apiVersion;
 @property (nonatomic, retain) CartoDBCredentials *credentials;
 @property (nonatomic, assign) CartoDBResponseFormat responseFormat;
+@property (nonatomic, assign) int page;
+@property (nonatomic, assign) int pageSize;
 @property (nonatomic, readonly) bool valid;
 
 - (bool) startRequestWithSQL:(NSString*)sql;
