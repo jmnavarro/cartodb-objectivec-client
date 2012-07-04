@@ -126,6 +126,18 @@
     STAssertNil([_fixture valueAtRow:1 andColumn:nil], @"Item 1 must be nil");
 }
 
+- (void)testShouldWorkIfGeoJSONResponseHasNoRows
+{
+    NSString* geojson = @"{\"type\": \"FeatureCollection\",\"features\": []}";
+    
+    _fixture = [[CartoDBResponse alloc] initWithJSON:geojson andFormat:CartoDBResponseFormat_GeoJSON];
+    
+    STAssertNotNil(_fixture, @"Response can't be nil");
+    STAssertEquals(0, _fixture.count, @"Row count is not valid");
+    
+    STAssertNil([_fixture valueAtRow:0 andColumn:nil], @"Item must be nil");
+}
+
 
 - (void)testShouldWorkIfGeoJSONResponseHasNoGeometry
 {
